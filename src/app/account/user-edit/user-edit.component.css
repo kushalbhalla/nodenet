@@ -1,0 +1,66 @@
+.userEdit__container {
+    margin-top: 4rem;
+}
+
+.my-custom-class {
+    width: 300px;
+}
+
+.edit__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.change__profilePicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userImage {
+    height: 130px; 
+    width: 130px; 
+    border-radius: 50%;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    cursor: pointer;
+    padding: 10px 10px 10px 30px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5%;
+    border: 1px solid #ccc;
+}
+
+.change__details {
+    margin-top: 5%;
+}
+
+.formField {
+    margin-left: 2%;
+    width: 48%;
+}
+
+.control__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.submit__button {
+    background-color: #007fff;
+    color: white;
+    margin-left: 20px;
+}
+
+.control__button {
+    background-color: red;
+    color: white;
+}

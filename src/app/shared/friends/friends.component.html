@@ -1,0 +1,21 @@
+<div class="friends__wrapper">
+    <div class="friends__header">
+        <p>{{type | titlecase}}</p>
+    </div>
+    <hr>
+    <div class="friends__container">
+        <div class="rightbar__list" *ngFor="let userInfo of usersData">
+            <div class="user__index">
+                <div class="user__info">
+                    <img *ngIf="userInfo.profilePicture === ''" class="userImg" src="assets/defaultProfile.png" alt="">
+                    <img *ngIf="userInfo.profilePicture !== ''" class="userImg" src="{{serverDir}}{{userInfo.profilePicture}}" alt="">
+                    <span class="username">
+                        {{userInfo.username}}
+                    </span>
+                </div>
+                <p *ngIf="type === 'followers'"  class="follow__button" (click)="onFollowUnfollow(user.followings.includes(userInfo._id) ? 'unfollow' : 'follow', userInfo._id)">{{user.followings.includes(userInfo._id) ? 'Unfollow' : 'Follow'}}</p>
+                <p *ngIf="type === 'followings'" class="follow__button" (click)="onFollowUnfollow('unfollow', userInfo._id)">Unfollow</p>
+            </div>
+        </div>
+    </div>
+</div>

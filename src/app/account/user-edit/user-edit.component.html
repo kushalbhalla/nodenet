@@ -1,0 +1,37 @@
+<div class="userEdit__container">
+    <form class="edit__form" *ngIf="userEditForm" [formGroup]="userEditForm" (ngSubmit)="onSubmit()">
+        <div class="change__profilePicture">
+            <img class="userImage" [src]="userImage" alt="">
+            <label for="file-upload" class="custom-file-upload">
+                Change
+            </label>
+            <input id="file-upload" type="file" (change)="onFileChange($event)" />
+        </div>
+        <div class="change__details">
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" placeholder="" name="username" formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Bio</mat-label>
+                <input matInput type="text" placeholder="" name="bio" formControlName="bio">
+            </mat-form-field>
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="" name="email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput type="number" placeholder="" name="phone" formControlName="phoneNumber">
+            </mat-form-field>
+            <div class="control__buttons">
+                <button mat-flat-button class="submit__button" type="submit">
+                    Save
+                </button>
+                <button mat-flat-button class="control__button" type="button" (click)="onCancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

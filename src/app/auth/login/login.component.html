@@ -1,0 +1,38 @@
+<div class="login__wrapper">
+    <div class="login__header">
+        <p>Login</p>
+    </div>
+    <div class="login__box">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form__fields">
+                <input 
+                    class="login__input" 
+                    placeholder="Email" 
+                    type="email" ngModel 
+                    name="email" 
+                    required 
+                    email>
+                <input 
+                    class="login__input" 
+                    placeholder="Password" 
+                    type="text" 
+                    ngModel 
+                    name="password" 
+                    required 
+                    minlength="6">
+                <button 
+                    class="submit__button" 
+                    mat-button 
+                    type="submit" 
+                    [disabled]="!loginForm.valid">
+                    Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="switch__container">
+        <p>Don't have account?</p>
+        <a routerLink="/auth/register">
+            Sing up
+        </a>
+    </div>
+</div>

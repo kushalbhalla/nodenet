@@ -1,0 +1,23 @@
+.feed__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.feed__container {
+    height: 100%;
+    width: 100%;
+}
+
+
+@media  (max-width: 1000px) {
+    .feed__wrapper {
+        justify-content: center;
+        flex-direction: row;
+        border: none;
+    }
+}
+
+.post {
+    height: 100%;
+    margin: 2rem 2rem 4rem 2rem;  
+}

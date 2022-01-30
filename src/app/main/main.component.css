@@ -1,0 +1,29 @@
+.main__container {
+    display: flex;
+    width: 100%;
+}
+
+.feed {
+    flex: 7.5;
+}
+
+.empty__container {
+    margin-top: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.rightbar {
+    flex: 4.5;
+}
+
+@media  (max-width: 1000px) {
+    .rightbar {
+        display: none;
+    }
+
+    .feed {
+        flex: 1;
+    }
+}

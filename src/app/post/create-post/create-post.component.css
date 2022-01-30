@@ -1,0 +1,103 @@
+.post__wrapper{
+    margin-top: 5%;
+    width: 500px;
+    padding: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form__label {
+    font-size: 22px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.form__input{
+    background: transparent;
+    border: none;
+    margin: 0;
+    outline-width: 0;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.image__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 475px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+#image__previewed {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.image__box:hover #image__previewed {
+    opacity: 0.9;
+}
+
+.image__box:hover  #unseclect__button{
+    opacity: 1;
+} 
+#unseclect__button {
+    margin-left: -40px;
+    opacity: 0;
+    align-self: flex-start;
+}
+
+.control__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.submit__button {
+    color: white;
+    background-color: #007fff;
+    margin-left: 20px;
+}
+
+.control__button {
+    color: white;
+    background-color: red;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

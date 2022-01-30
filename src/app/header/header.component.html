@@ -1,0 +1,57 @@
+<div class="navbar__header">
+    <div *ngIf="user" class="navbar__container">
+        <mat-toolbar class="navbar__toolbar">
+            <div class="toolbar__left">
+                <span class="logo">
+                    <a routerLink="/">
+                        NodeNet
+                    </a>
+                </span>
+            </div>
+            <div class="toolbar__center">
+                <div class="search__container">
+                    <mat-icon svgIcon="search"></mat-icon>
+                    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                        <input 
+                            type="text" 
+                            formControlName="searchInput" 
+                            placeholder="search a person..">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="toolbar__right">
+                <div class="toolbar__icons">
+                    <div class="toolbar__iconsItem">
+                        <a routerLink="/" title="Home">
+                            <mat-icon svgIcon="home"></mat-icon>
+                        </a>
+                    </div>
+                    <div class="toolbar__iconsItem">
+                        <a routerLink="post/create" title="Add">
+                            <mat-icon svgIcon="add"></mat-icon>
+                        </a>
+                    </div>
+                    <div class="toolbar__iconsItem">
+                        <a routerLink="/" title="Chat">
+                            <mat-icon svgIcon="chat"></mat-icon>
+                        </a>
+                    </div>
+                    <div class="toolbar__iconsItem">
+                        <a routerLink="/" title="Notification">
+                            <mat-icon svgIcon="notification"></mat-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="user__profile">
+                    <img [matMenuTriggerFor]="afterMenu" class="userImg" [src]="userImage" alt="">
+                    <mat-menu #afterMenu="matMenu" xPosition="after">
+                        <a mat-menu-item routerLink="/account">User Profile</a>
+                        <a mat-menu-item routerLink="/account/user-edit">Edit</a>
+                        <a mat-menu-item (click)="onLogout()">Logout</a>
+                    </mat-menu>
+                </div>
+            </div>
+        </mat-toolbar>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div *ngIf="serchedUsers" class="search__container">
+    <div *ngIf="serchedUsers.length >= 1" class="search__header">
+        <span class="header__context">
+            Search results for
+            <p class="search__word">{{searchQuery}}</p>
+        </span>
+        <hr class="rightbar__hr">
+    </div>
+    <div *ngIf="serchedUsers.length >= 1" class="search__result">
+        <div *ngFor="let searchUser of serchedUsers" class="user__index">
+            <div class="user__info" (click)="goToUser(searchUser._id)">
+                <img *ngIf="searchUser.profilePicture === ''" class="userImg" src="assets/defaultProfile.png" alt="">
+                <img *ngIf="searchUser.profilePicture !== ''" class="userImg" src="{{serverDir}}{{searchUser.profilePicture}}" alt="">
+                <span class="username">
+                    {{searchUser.username}}
+                </span>
+            </div>
+            <button mat-button class="follow__button" (click)="onFollow(user.followings.includes(searchUser._id) ? 'unfollow' : 'follow', searchUser._id)">{{user.followings.includes(searchUser._id) ? 'Unfollow' : 'Follow'}}</button>
+        </div>
+    </div>
+    <div *ngIf="serchedUsers.length === 0" class="empty__result">
+        <span class="header__context">
+            Can't find any user with
+            <p class="search__word">{{searchQuery}}</p>
+            username
+        </span>
+    </div>
+</div>
+
+

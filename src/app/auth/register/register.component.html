@@ -1,0 +1,48 @@
+<div class="signUp__wrapper">
+    <div class="signUp__header">
+        <p>Sign Up</p>
+    </div>
+    <div class="signUp__box">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <div class="form__fields">
+                <input 
+                    class="signUp__input" 
+                    placeholder="Username" 
+                    type="text"
+                    ngModel
+                    name="username"
+                    >
+                <input 
+                    class="signUp__input" 
+                    placeholder="Email" 
+                    type="email"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                    >
+                <input 
+                    class="signUp__input" 
+                    placeholder="Password" 
+                    type="text"
+                    ngModel
+                    name="password"
+                    required
+                    minlength="6"
+                    >
+                <button 
+                    class="submit__button" 
+                    mat-button
+                    type="submit"
+                    [disabled]="!authForm.valid" 
+                    >Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <div class="switch__container">
+        <p>Have a account already?</p>
+        <a routerLink="/auth/login">
+            Login
+        </a>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="post__wrapper">
+    <mat-card class="post__card">
+        <div class="postTop">
+            <div class="postTopLeft">
+                <button mat-flat-button style="background-color: inherit;" (click)="goToUser()">
+                    <img class="postProfileImg" [src]="postUserImage" alt="">
+                    <span class="postUsername">
+                        {{ postUser.username }}
+                    </span>
+                </button>
+                <span class="postDate">{{post.createdAt}}</span>
+            </div>
+            <div class="postTopRight">
+                <button mat-icon-button>
+                    <mat-icon svgIcon="more_vert"></mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="postCenter">
+            <span class="postText">{{ post.description }}</span>
+            <img class="postImg" src="{{serverDir}}{{post.imgUrl}}" alt="" />
+        </div>
+        <div class="postBottom">
+            <div class="postBottomLeft">
+                <button mat-icon-button (click)="updatePostLikes()">
+                    <img class="likeIcon" src="assets/like.png" alt="" />
+                </button>
+                <span class="postLikeCounter">{{ post.likes.length }} liked</span>
+            </div>
+        </div>
+    </mat-card>
+</div>

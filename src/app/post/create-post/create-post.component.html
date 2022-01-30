@@ -1,0 +1,40 @@
+
+<mat-card class="post__wrapper">
+    <div class="title">
+        <p>Create Post</p>
+    </div>
+    <form class="form__group" *ngIf="postForm" [formGroup]="postForm" (ngSubmit)="onFormSubmit()">
+        <div class="form__field">
+            <label class="form__label" for="description">Description</label>
+            <input 
+                class="form__input" 
+                type="text" 
+                id="description" 
+                formControlName="description"/>
+        </div>
+        <div class="image__box">
+            <div *ngIf="!imagePath" class="image__selection">
+                <label for="file-upload" class="custom-file-upload">
+                    <mat-icon svgIcon="media"></mat-icon>
+                    Select Image
+                </label>
+                <input id="file-upload" type="file" (change)="onFileChange($event)" />
+            </div>
+            <img *ngIf="imagePath" id="image__previewed" [src]="imagePath" />
+            <button *ngIf="imagePath" type="button" id="unseclect__button" mat-icon-button (click)="onClearImage()">
+                <mat-icon svgIcon="close"></mat-icon>
+            </button>
+        </div>
+        <div class="control__buttons">
+            <button *ngIf="!editMode" mat-raised-button class="submit__button" type="submit" [disabled]="!postForm.valid">
+                Save
+            </button>
+            <button *ngIf="editMode" mat-raised-button class="submit__button" type="submit" [disabled]="!imagePath">
+                Update
+            </button>
+            <button mat-raised-button class="control__button" type="button" (click)="onCancel()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</mat-card>

@@ -1,0 +1,11 @@
+<div class="main__container">
+    <div *ngIf="intro" class="empty__container">
+        <p>Please create some post and follow some people here.</p>
+    </div>
+    <div *ngIf="!intro" class="feed">
+        <app-feed></app-feed>
+    </div>
+    <div *ngIf="!intro" class="rightbar">
+        <app-rightbar></app-rightbar>
+    </div>
+</div>

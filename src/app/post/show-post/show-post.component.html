@@ -1,0 +1,25 @@
+<div class="post__wrapper">
+    <div *ngIf="post" class="post__card">
+        <div class="postTop">
+            <div class="postTopLeft" (click)="goToUser()">
+                        <img class="postProfileImg" [src]="userImage" alt="">
+                        <span class="postUsername">
+                            {{ post.user.username }}
+                        </span>
+                <span class="postDate">{{post.post.createdAt}}</span>
+            </div>
+        </div>
+        <div class="postCenter">
+            <span class="postText">{{ post.post.description }}</span>
+            <img class="postImg" src="{{serverDir}}{{post.post.imgUrl}}" alt="" />
+        </div>
+        <div class="postBottom">
+            <div class="postBottomLeft">
+                <button mat-icon-button (click)="updatePostLikes()">
+                    <img class="likeIcon" src="assets/like.png" alt="" />
+                </button>
+                <span class="postLikeCounter">{{ post.post.likes.length }} liked</span>
+            </div>
+        </div>
+    </div>
+</div>

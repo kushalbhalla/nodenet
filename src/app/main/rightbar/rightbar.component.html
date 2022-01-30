@@ -1,0 +1,27 @@
+<div class="rightbar__wrapper">
+    <div *ngIf="users" class="rightbar__container">
+        <div class="user__profile">
+            <img class="user__profileImg" [src]="userImage" alt="">
+            <span class="username">
+                {{user.username}}
+            </span>
+        </div>
+        <hr class="rightbar__hr">
+        <span class="suggestions">
+            Some suggestions for you
+        </span>
+        <div class="rightbar__list" *ngFor="let user of users; let i=index">
+                <div class="user__index">
+                    <div class="user__info">
+                        <img *ngIf="user.profilePicture === ''" class="userImg" src="assets/defaultProfile.png" alt="">
+                        <img *ngIf="user.profilePicture !== ''" class="userImg" src="{{serverDir}}{{user.profilePicture}}" alt="">
+                        <span class="username">
+                            {{user.username}}
+                        </span>
+                    </div>
+                    <button mat-button class="follow__button" (click)="onFollow(user._id)">Follow</button>
+                </div>
+        </div>
+    </div>
+</div>
+

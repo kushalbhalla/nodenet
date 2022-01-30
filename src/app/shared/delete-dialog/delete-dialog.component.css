@@ -1,0 +1,27 @@
+.dialog__message {
+    display: flex;
+    flex-direction: column;
+}
+
+#message__text {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.control__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+
+.delete__button {
+    color: white;
+    background-color: red;
+    margin-left: 20px;
+}
+
+.control__button {
+    color: white;
+    background-color: rgb(112, 109, 109);
+}

@@ -1,0 +1,150 @@
+@font-face {
+  font-family: Conveat;
+  src: url("../../assets/font/Caveat/Caveat-Bold.ttf");
+}
+
+
+.navbar__header {
+    display: flex;
+    top: 0;
+    position: sticky;
+    width: 100%;
+    justify-content: center;
+    z-index: 999;
+    background-color: rgb(250, 250, 250);
+    box-sizing: border-box;
+    box-shadow: 0px 2px 20px 0px rgb(223, 221, 221);
+}
+
+.navbar__container {
+    width: 90%;
+}
+
+@media (min-width: 412px) and (max-width: 755px) {
+    .navbar__container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 756px) and (max-width: 1007px) {
+    .navbar__container {
+        width: 90%;
+    }
+}
+
+
+@media (min-width: 1008px) and (max-width: 1511px) {
+    .navbar__container {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1512px) and (max-width: 1763px) {
+    .navbar__container {
+        width: 70%;
+    }
+}
+
+
+.navbar__toolbar{
+    display: flex;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    align-items: center;
+}
+
+.toolbar__left {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Conveat;
+    color: black;
+}
+
+
+.toolbar__center {
+    flex: 5;
+    margin-right: 20px;
+
+}
+
+.search__container{
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 30px;
+    border: 1px solid grey;
+    padding: 0 20px 0 10px;
+    flex: 1;
+}
+
+.search__container form{
+    display: flex;
+    flex: 1;
+}
+
+.search__container form input{
+    background: transparent;
+    border: none;
+    width: 100%;
+    outline-width: 0;
+    margin-left: 10px;
+    background-color: #f6f6f6;
+    font-size: 16px;
+}
+
+.search__container form button{
+    display: none;
+}
+
+.toolbar__right {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.toolbar__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+}
+
+.toolbar__iconsItem {
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toolbar__iconsItem a {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar__iconsItem mat-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.user__profile {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.userImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

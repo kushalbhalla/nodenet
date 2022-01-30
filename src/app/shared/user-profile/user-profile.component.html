@@ -1,0 +1,29 @@
+<div *ngIf="visitingUserData" class="user__wrapper">
+    <div class="user__details">
+        <div class="user__detailsRight">
+            <img style="height: 200px; width: 200px; border-radius: 50%;" [src]="userImage" alt="">
+        </div>
+        <div class="user__detailsLeft">
+            <div class="detailsLeft__top">
+                <span class="username">{{ visitingUserData.user.username }}</span>
+                <p class="follow__button" (click)="onFollowUnfollow(user.followings.includes(visitingUserData.user._id) ? 'unfollow' : 'follow', visitingUserData.user._id)">{{user.followings.includes(visitingUserData.user._id) ? 'Unfollow' : 'Follow'}}</p>
+            </div>
+            <div class="detailsLeft__center">
+                <p *ngIf="visitingUserData.posts">{{ visitingUserData.posts.length }} post </p>
+                <p >{{ visitingUserData.user.followers.length }} followers</p>
+                <p >{{ visitingUserData.user.followings.length }} following</p>
+            </div>
+            <div class="detailsLeft__bottom">
+                <p>{{visitingUserData.user.bio}}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div *ngIf="visitingUserData.posts" class="user__postList">
+        <div *ngFor="let post of visitingUserData.posts" class="user__post">
+            <div class="image__box">
+                <img id="image__previewed" (click)="onView(post._id)" src="{{serverDir}}{{post.imgUrl}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
